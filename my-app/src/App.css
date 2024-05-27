@@ -1,0 +1,30 @@
+/* CSS for App.js */
+.App {
+  font-family: Arial, sans-serif;
+}
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container{
+  display: flex;
+
+justify-content: space-around;
+padding-top: 30px;
+
+}
+body{
+  background-color: rgb(198, 151, 31);
+}
+@media screen and (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+  .movies{
+   margin-top: 50px;
+   order: 2;
+  }
+}
+
