@@ -1,25 +1,34 @@
-// App.js
+
 import React, { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import MovieSearch from './pages/MovieSearch';
 import WatchList from './pages/WatchList';
-import Basket from './pages/Basket'; // Update the import path
+import Basket from './pages/Basket';
 import "./App.css";
 import SinglePage from './pages/SinglePage';
+import Header from './components/Header';
 
 function App() {
     const [watchList, setWatchList] = useState([]);
     const [basket, setBasket] = useState([]);
 
     const addToWatchList = (movie) => {
-        setWatchList(prevList => [...prevList, movie]);
+  
+
+        const newWatchList = [...watchList, movie];
+        setWatchList(newWatchList);
+        setBasket(newWatchList);
     };
 
     const addToBasket = (movie) => {
         setBasket(prevBasket => [...prevBasket, movie]);
     };
     const removeFromWatchList = (index) => {
-        setWatchList(prevList => prevList.filter((_, i) => i !== index));
+        
+
+        const newWatchList = watchList.filter((_, i) => i !== index);
+        setWatchList(newWatchList);
+        setBasket(newWatchList); 
     };
     const removeFromBasket = (index) => {
         setBasket(prevBasket => prevBasket.filter((_, i) => i !== index));
@@ -28,7 +37,8 @@ function App() {
         <Router>
             <div className="App">
            
-
+            <Header/>
+        
                 <Routes>
                     <Route path="/" element={
                         <div className="container">
@@ -45,19 +55,6 @@ function App() {
 }
 
 export default App;
-
-
-
-
-
-
-
-    
-
-
-
-
-
 
 
 

@@ -38,6 +38,7 @@
 .list{
     display: flex;
     justify-content: space-between;
+    align-items: center;
 }
 .watch-list input {
     flex: 1;
@@ -96,6 +97,7 @@
     background-color: #218838;
 }
 
+
 @media (max-width: 600px) {
     .watch-list div {
         flex-direction: column;
@@ -109,5 +111,15 @@
 
     .watch-list button {
         width: 100%;
+    }
+    .watch-list{
+        max-width: 400px;
+    }
+}
+
+@media (max-width:768px) {
+  
+    .watch-list{
+        max-width: 400px;
     }
 }

@@ -1,13 +1,17 @@
-// WatchList.js
+
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import "../pages/list.css"
-const WatchList = ({ watchList, addToBasket,removeFromWatchList }) => {
+const WatchList = ({ watchList, addToBasket,removeFromWatchList}) => {
     const [inputValue, setInputValue] = useState('');
 
     const handleSave = () => {
-        addToBasket({ Title: inputValue }); // Add the input value to the basket
-        setInputValue(''); // Clear the input field after saving
+      
+        if (inputValue.trim() !== '') {
+            const movie = { Title: inputValue.trim() };
+            addToBasket(movie);
+            setInputValue('');
+        }
     };
 
     return (
@@ -37,19 +41,5 @@ const WatchList = ({ watchList, addToBasket,removeFromWatchList }) => {
 };
 
 export default WatchList;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 

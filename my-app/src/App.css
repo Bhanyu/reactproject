@@ -16,15 +16,16 @@ padding-top: 30px;
 
 }
 body{
-  background-color: rgb(198, 151, 31);
+  background-color: rgb(135, 122, 225);
 }
 @media screen and (max-width: 768px) {
   .container {
     flex-direction: column;
+    align-items: center;
   }
   .movies{
-   margin-top: 50px;
-   order: 2;
-  }
+    margin-top: 50px;
+    order: 2;
+   }
 }
 

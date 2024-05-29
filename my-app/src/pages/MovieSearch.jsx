@@ -6,25 +6,25 @@ const MovieSearch = ({ addToWatchList }) => {
     const [query, setQuery] = useState('');
     const [movies, setMovies] = useState([]);
     const [error, setError] = useState('');
-    const [loading, setLoading] = useState(false);
+
 
     const apiUrl = "https://www.omdbapi.com/";
     const apiKey = "47bb27dc";
 
     useEffect(() => {
         if (query.length > 0) {
-            setLoading(true);
+         
             fetchMovies(query);
         } else {
             setMovies([]);
         }
-    }, [query]);
+    }, [query, movies]);
 
     const fetchMovies = async (searchQuery) => {
         try {
             const response = await fetch(`${apiUrl}?s=${searchQuery}&apikey=${apiKey}`);
             const data = await response.json();
-            setLoading(false);
+         
             if (data.Response === "True") {
                 setMovies(data.Search);
                 setError('');
@@ -33,7 +33,7 @@ const MovieSearch = ({ addToWatchList }) => {
                 setMovies([]);
             }
         } catch (err) {
-            setLoading(false);
+          
             setError('An error occurred while fetching data.');
         }
     };
@@ -48,10 +48,10 @@ const MovieSearch = ({ addToWatchList }) => {
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Enter movie title"
             />
-            {loading && <p>Loading...</p>}
+          
             {error && <p>{error}</p>}
             <div className='movies'>
-                {movies.map((movie) => (
+                {movies && movies.map((movie) => (
                     <div className='movie' key={movie.imdbID}>
                         <img src={movie.Poster} alt={`${movie.Title} Poster`} />
                         <h2>{movie.Title}</h2>
