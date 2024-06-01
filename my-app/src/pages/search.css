@@ -112,9 +112,12 @@
     }
 
     .add,
-    .readmore,
-    .search {
+    .readmore
+    {
         margin: 5px 0;
         width: 100%;
+    }
+    .search{
+        padding: 10px;
     }
 }
