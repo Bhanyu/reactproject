@@ -8,7 +8,9 @@ import "./App.css";
 import SinglePage from './pages/SinglePage';
 import Header from './components/Header';
 
+
 function App() {
+ 
     const [watchList, setWatchList] = useState([]);
     const [basket, setBasket] = useState([]);
 
@@ -31,7 +33,10 @@ function App() {
         setBasket(newWatchList); 
     };
     const removeFromBasket = (index) => {
-        setBasket(prevBasket => prevBasket.filter((_, i) => i !== index));
+        // setBasket(prevBasket => prevBasket.filter((_, i) => i !== index));
+        const newBasketList = basket.filter((_, i) => i !== index);
+        setWatchList(newBasketList);
+        setBasket(newBasketList); 
     };
     return (
         <Router>
@@ -42,8 +47,14 @@ function App() {
                 <Routes>
                     <Route path="/" element={
                         <div className="container">
-                           <div className="movies"> <MovieSearch addToWatchList={addToWatchList} /></div>
+                           <div className="movies"> <MovieSearch addToWatchList={addToWatchList} />
+     
+
+  
+                           </div>
                            <div className="watch"> <WatchList watchList={watchList} addToBasket={addToBasket}  removeFromWatchList={removeFromWatchList}  /></div>
+                   
+                        
                         </div>
                     } />
                     <Route path="/basket" element={<Basket basket={basket} removeFromBasket={removeFromBasket} />} /> 

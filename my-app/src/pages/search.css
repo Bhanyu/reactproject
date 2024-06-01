@@ -1,18 +1,39 @@
-/* search.css */
+
+
+
+
+
+
+
 .allmovies {
     max-width: 400px;
-    /* background-color: #f9f9f9; */
     padding: 20px 40px;
     border-radius: 10px;
-
 }
 
 .enter {
     width: 100%;
     padding: 10px;
-  margin: 30px 0;
-  border-radius: 10px;
+    margin: 30px 0;
+    border-radius: 10px;
+}
 
+.search-bar {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+
+}
+
+.search {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 16px;
+    text-align: center;
+  
+    border-radius: 5px;
+    cursor: pointer;
 }
 
 .movies {
@@ -72,14 +93,18 @@
     background-color: #0056b3;
 }
 
+.search:hover {
+    background-color: #0056b3;
+}
+
 .error {
     color: red;
     margin-top: 10px;
 }
+
 @media (max-width: 600px) {
     .movies {
         grid-template-columns: 1fr;
-      
     }
 
     .addread {
@@ -87,9 +112,9 @@
     }
 
     .add,
-    .readmore {
+    .readmore,
+    .search {
         margin: 5px 0;
         width: 100%;
     }
- 
 }
