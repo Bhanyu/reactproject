@@ -24,17 +24,7 @@
     align-items: center;
     margin-bottom: 20px;
 }
-.delete {
-    padding: 5px 10px;
-    background-color: red;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-}
-.delete:hover {
-    background-color: darkred;
-}
+
 .list{
     display: flex;
     justify-content: space-between;
@@ -49,7 +39,7 @@
     margin-right: 10px;
 }
 
-.watch-list button {
+.save {
     padding: 10px 20px;
     font-size: 16px;
     cursor: pointer;
@@ -62,6 +52,17 @@
 
 .watch-list button:hover {
     background-color: #0056b3;
+}
+.deletebtn {
+    padding:  10px;
+    background-color: red;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+.deletebtn:hover {
+    background-color: darkred;
 }
 
 .watch-list ul {
@@ -87,13 +88,17 @@
     text-decoration: none;
 }
 
-.watch-list a button {
+.gobasket {
     width: 100%;
     padding: 10px;
     background-color: #28a745;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 16px;
 }
 
-.watch-list a button:hover {
+.gobasket:hover {
     background-color: #218838;
 }
 
@@ -109,17 +114,26 @@
         margin-bottom: 10px;
     }
 
-    .watch-list button {
+    .gobasket, .save {
         width: 100%;
     }
     .watch-list{
-        max-width: 400px;
+        max-width: 600px;
     }
 }
 
 @media (max-width:768px) {
   
-    .watch-list{
-        max-width: 400px;
+    /* .watch-list{
+        max-width: 500px;
+    } */
+   .deletebtn {
+     padding: 10px;
+     margin-left: 20px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
     }
 }

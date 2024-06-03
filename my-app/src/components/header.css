@@ -14,3 +14,11 @@
     font-size: 45px;
     margin-left: 40px;
 }
+@media (max-width:600px) {
+   .title{
+    margin-left: 0px;
+   }
+   #header{
+    padding: 20px 10px 10px;
+   }
+}

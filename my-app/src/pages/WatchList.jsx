@@ -24,17 +24,17 @@ const WatchList = ({ watchList, addToBasket,removeFromWatchList}) => {
                     onChange={(e) => setInputValue(e.target.value)}
                     placeholder="Enter movie title"
                 />
-                <button onClick={handleSave}>Save</button>
+                <button className='save' onClick={handleSave}>Save</button>
             </div>
             <ul>
                 {watchList.map((movie, index) => (
                     <li className='list' key={index}>{movie.Title}
-                    <button className="delete" onClick={() => removeFromWatchList(index)}>Delete</button>
+                    <button className="deletebtn" onClick={() => removeFromWatchList(index)}>Delete</button>
                     </li>
                 ))}
             </ul>
             <Link to="/basket">
-                <button>Go to Basket</button>
+                <button className='gobasket'>Go to Basket</button>
             </Link>
         </div>
     );

@@ -17,6 +17,7 @@ padding-top: 30px;
 }
 body{
   background-color: rgb(135, 122, 225);
+
 }
 @media screen and (max-width: 768px) {
   .container {
