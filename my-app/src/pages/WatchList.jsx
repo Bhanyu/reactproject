@@ -43,3 +43,5 @@ const WatchList = ({ watchList, addToBasket,removeFromWatchList}) => {
 export default WatchList;
 
 
+
+

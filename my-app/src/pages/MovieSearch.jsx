@@ -3,7 +3,7 @@
 
 
 
-import React, { useState } from 'react';
+import React, { useState,useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import "../pages/search.css";
 
@@ -50,6 +50,9 @@ const MovieSearch = ({ addToWatchList }) => {
             setError('');
         }
     };
+    useEffect(() => {
+        fetchMovies('Star Wars'); 
+    }, []);
 
     return (
         <div className='allmovies'>
